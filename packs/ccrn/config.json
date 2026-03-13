@@ -1,0 +1,27 @@
+{
+  "examId": "ccrn",
+  "brandName": "Code Blue Press",
+  "theme": "dark",
+  "logoPath": "../packs/ccrn/assets/logo.png?v=2",
+  "accessPassword": "CCRN2026",
+  "practiceChunkSize": 10,
+  "nav": [
+    "Home",
+    "Exam Simulator",
+    "Printable Practice Exams"
+  ],
+  "sections": [
+    {
+      "id": "ccrn",
+      "label": "Adult CCRN",
+      "timeMin": 180,
+      "examQuestions": 150,
+      "type": "mcq",
+      "choices": 4,
+      "examFiles": [
+        "ccrn_exam_01.json"
+      ]
+    }
+  ],
+  "printables": []
+}

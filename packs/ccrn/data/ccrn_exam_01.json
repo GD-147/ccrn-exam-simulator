@@ -1,0 +1,14 @@
+[
+  {
+    "id": "CCRN1-001",
+    "prompt": "A patient with septic shock remains hypotensive despite adequate fluid resuscitation. Which intervention is the best next step to support mean arterial pressure?",
+    "choices": {
+      "A": "Start norepinephrine infusion",
+      "B": "Administer IV furosemide",
+      "C": "Lower the head of the bed",
+      "D": "Discontinue continuous pulse oximetry"
+    },
+    "correct": "A",
+    "explanation": "Norepinephrine is a standard first-line vasopressor for persistent hypotension in septic shock after adequate fluid resuscitation."
+  }
+]
