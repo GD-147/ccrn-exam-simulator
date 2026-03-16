@@ -19,7 +19,8 @@
       "type": "mcq",
       "choices": 4,
       "examFiles": [
-        "ccrn_exam_01.json"
+        "ccrn_exam_01.json",
+        "ccrn_exam_02.json"
       ]
     }
   ],
