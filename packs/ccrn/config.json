@@ -14,7 +14,7 @@
     {
       "id": "ccrn",
       "label": "Adult CCRN",
-      "timeMin": 180,
+      "timeMin": 150,
       "examQuestions": 125,
       "type": "mcq",
       "choices": 4,
