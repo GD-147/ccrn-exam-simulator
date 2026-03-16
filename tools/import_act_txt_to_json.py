@@ -11,6 +11,35 @@ def norm(s: str) -> str:
     s = re.sub(r"\s+", " ", s.strip())
     return s.casefold()
 
+def clean_input_text(text: str) -> str:
+    replacements = {
+        "PART A ÔøΩ QUESTIONS": "PART A — QUESTIONS",
+        "PART B ÔøΩ ANSWER KEY + EXPLANATIONS": "PART B — ANSWER KEY + EXPLANATIONS",
+        "PART A � QUESTIONS": "PART A — QUESTIONS",
+        "PART B � ANSWER KEY + EXPLANATIONS": "PART B — ANSWER KEY + EXPLANATIONS",
+        " ÔøΩ Correct:": " — Correct:",
+        " ÔøΩ Explanation:": " — Explanation:",
+        " � Correct:": " — Correct:",
+        " � Explanation:": " — Explanation:",
+        "dynÔøΩsec": "dyn·sec",
+        "dyn�sec": "dyn·sec",
+        "L/min/m?": "L/min/m²",
+    }
+
+    for old, new in replacements.items():
+        text = text.replace(old, new)
+
+    text = re.sub(r"(\d)ÔøΩC", r"\1°C", text)
+    text = re.sub(r"(\d)�C", r"\1°C", text)
+
+    text = re.sub(r"(?<=\w)ÔøΩ(?=\w)", "’", text)
+    text = re.sub(r"(?<=\w)�(?=\w)", "’", text)
+
+    text = re.sub(r"ÔøΩ([^ÔøΩ\n]+)ÔøΩ", r'"\1"', text)
+    text = re.sub(r"�([^�\n]+)�", r'"\1"', text)
+
+    return text
+
 def split_questions_and_key(lines):
     # Find first key line
     key_idx = None
@@ -137,7 +166,7 @@ def main():
     ap.add_argument("--expected", type=int, default=None)
     args = ap.parse_args()
 
-    txt = Path(args.infile).read_text(encoding="utf-8", errors="replace")
+    txt = clean_input_text(Path(args.infile).read_text(encoding="utf-8", errors="replace"))
     # Normalize line endings
     lines = txt.replace("\r\n","\n").replace("\r","\n").split("\n")
 
