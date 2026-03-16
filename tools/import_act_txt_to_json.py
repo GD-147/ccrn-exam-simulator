@@ -1,9 +1,9 @@
 import re, json, argparse
 from pathlib import Path
 
-ID_RE = re.compile(r"^[A-Z]{1,2}\d-\d{3}\s*$")
+ID_RE = re.compile(r"^[A-Z][A-Z0-9]*-\d{3}\s*$")
 OPT_RE = re.compile(r"^([ABCD])\)\s*(.*)\s*$")
-KEY_START_RE = re.compile(r"^(?P<id>[A-Z]{1,2}\d-\d{3})\s*[-–—�?]+\s*Correct:\s*(?P<correct>.+?)\s*[-–—�?]+\s*Explanation:\s*(?P<exp>.*)\s*$")
+KEY_START_RE = re.compile(r"^(?P<id>[A-Z][A-Z0-9]*-\d{3})\s*[-–—�?]+\s*Correct:\s*(?P<correct>.+?)\s*[-–—�?]+\s*Explanation:\s*(?P<exp>.*)\s*$")
 
 def norm(s: str) -> str:
     s = s.replace("\u2019","'").replace("\u201c",'"').replace("\u201d",'"')
