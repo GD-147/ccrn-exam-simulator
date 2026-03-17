@@ -19,9 +19,24 @@
       "type": "mcq",
       "choices": 4,
       "examFiles": [
-        "ccrn_exam_01.json",
-        "ccrn_exam_02.json"
-      ]
+  "ccrn_exam_01.json",
+  "ccrn_exam_02.json",
+  "ccrn_exam_03.json",
+  "ccrn_exam_04.json",
+  "ccrn_exam_05.json",
+  "ccrn_exam_06.json",
+  "ccrn_exam_07.json",
+  "ccrn_exam_08.json",
+  "ccrn_exam_09.json",
+  "ccrn_exam_10.json",
+  "ccrn_exam_11.json",
+  "ccrn_exam_12.json",
+  "ccrn_exam_13.json",
+  "ccrn_exam_14.json",
+  "ccrn_exam_15.json",
+  "ccrn_exam_16.json",
+  "ccrn_exam_17.json"
+]
     }
   ],
   "printables": []
